@@ -1,3 +1,3 @@
 export function filterByFacilities(hotelList) {
-    return [];
-}
+    return [...hotelList];
+};
