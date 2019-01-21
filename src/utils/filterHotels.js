@@ -1,3 +1,6 @@
-export function filterByFacilities(hotelList) {
+export function filterByFacilities(hotelList, facility = '') {
+    if (facility) {
+        return [];
+    }
     return [...hotelList];
 };

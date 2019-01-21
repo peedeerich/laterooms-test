@@ -39,5 +39,12 @@ describe('filterByFacilities', () => {
         const hotelList = defaultList;
         const filteredList = filterByFacilities(hotelList)
         expect(filteredList).toEqual(hotelList)
-    })
+    });
+
+    it('returns an empty list if no hotels contain required facility', () => {
+        const hotelList = defaultList;
+        const facility = 'free lunch';
+        const filteredList = filterByFacilities(hotelList, facility);
+        expect(filteredList).toEqual([]);
+    });
 })
