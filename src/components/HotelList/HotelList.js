@@ -1,5 +1,9 @@
 import React from 'react';
+import Hotel from '../Hotel';
 
 export const HotelList = ({ }) => (
-    <div>Hotels list goes here</div>
+    <div>
+        <div>This is the hotels list (example hotel)</div>
+        <Hotel />
+    </div>
 )
