@@ -5,5 +5,11 @@ describe('filterByFacilities', () => {
         const hotelList = [];
         const filteredList = filterByFacilities(hotelList)
         expect(filteredList).toEqual([])
-    })
+    });
+
+    it('returns the same list if no hotels and a nontrivial filter', () => {
+        const hotelList = []
+        const filteredList = filterByFacilities(hotelList, 'foo')
+        expect(filteredList).toEqual([])
+    });
 })
