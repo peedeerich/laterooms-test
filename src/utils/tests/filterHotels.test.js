@@ -47,4 +47,11 @@ describe('filterByFacilities', () => {
         const filteredList = filterByFacilities(hotelList, facility);
         expect(filteredList).toEqual([]);
     });
+
+    it('returns a list of hotels containing facility if at least one exists', () => {
+        const hotelList = defaultList;
+        const facility = 'bar';
+        const filteredList = filterByFacilities(hotelList, facility);
+        expect(filteredList).toEqual(hotelList.slice(0, 2));
+    });
 })
