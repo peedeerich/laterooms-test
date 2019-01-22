@@ -1,0 +1,43 @@
+.Hotel {
+    background-color: beige;
+    display: flex;
+    flex-direction: row;
+    width: 60%;
+    justify-content: space-between;
+    padding: 10px;
+    margin: 10px;
+    flex-wrap: wrap;
+}
+
+.Hotel-facility-list {
+    text-align: left;
+}
+
+.Hotel-left {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    text-align: left;
+    flex: 0 1 40%;
+    padding: 3%;
+}
+
+.Hotel-right {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    text-align: left;
+    align-content: flex-start;
+    flex: 0 1 40%;
+    padding: 3%;
+}
+
+.Hotel-name {
+    margin-bottom: 5%;
+    font-weight: bold;
+}
+
+.Hotel-contact {
+    margin-top: 3%;
+    text-align: left;
+}
