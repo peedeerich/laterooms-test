@@ -12,4 +12,14 @@ describe('HotelList', () => {
         const component = mount(<HotelList hotels={mockHotels} />);
         expect(component.find('.Hotel')).toHaveLength(3);
     })
+
+    it('renders a filtered list', () => {
+        const mockHotels = [
+            {facilities: ['foo']},
+            {facilities: ['bar']},
+            {facilities: ['foo']}
+        ];
+        const component = mount(<HotelList hotels={mockHotels} facility='bar'/>);
+        expect(component.find('.Hotel')).toHaveLength(1);
+    });
 });
