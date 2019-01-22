@@ -1,9 +1,9 @@
 import React from 'react';
 
-export const Hotel = ({ }) => {
+export const Hotel = ({ hotel = {} }) => {
     return (
         <div className="Hotel">
-            This is a hotel
+            This is {hotel.name}
         </div>
     )
 }
