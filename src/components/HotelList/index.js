@@ -1,3 +1,3 @@
-import { HotelList } from './HotelList';
+import HotelList from './HotelList';
 
 export default HotelList;
