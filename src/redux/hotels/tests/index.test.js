@@ -1,4 +1,8 @@
-import reducer, { storeHotels, initialState } from '..';
+import configureMockStore from "redux-mock-store";
+import thunk from "redux-thunk";
+import reducer, { storeHotels, getHotels, initialState, STORE_HOTELS } from '..';
+
+import hotels from '../../../mockServer/hotels'; // would mock this in practice
 
 describe('reducer', () => {
   it('should return state for unknown action', () => {
@@ -25,4 +29,12 @@ describe('reducer', () => {
     const result = reducer(initialState, mockAction);
     expect(result.hotels).toEqual(hotels);
   });
+
+  it('should fetch hotels then dispatch STORE_HOTELS', async () => {
+    const mockStore = configureMockStore([thunk]);
+    const store = mockStore();
+    await store.dispatch(getHotels());
+    const actions = store.getActions();
+    expect(actions[0]).toEqual({ type: STORE_HOTELS, hotels });
+  })
 });

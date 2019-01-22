@@ -6,6 +6,14 @@ export const storeHotels = (hotels) => {
   return { type: STORE_HOTELS, hotels };
 };
 
+export const getHotels = () => {
+  return function (dispatch) {
+    return fetchHotels().then(
+      hotels => dispatch(storeHotels(hotels))
+    )
+  }
+}
+
 export const initialState = {
     hotels: [],
 };
