@@ -1,9 +1,21 @@
 import React from 'react';
+import PropTypes from 'prop-types';
+import { connect } from 'react-redux';
 
-export const HotelFilter = ({ }) => (
+import { changeFilter } from '../../redux/display';
+
+export const HotelFilter = ({ onChangeFilter = () => {} }) => (
     <div>
-        <input placeholder="Find a facility"/>
+        <input onChange={event => onChangeFilter(event.target.value)} placeholder="Find facility"/>
     </div>
 )
 
-export default HotelFilter;
+HotelFilter.propTypes = {
+    onChangeFilter: PropTypes.func,
+}
+
+const mapDispatchToProps = dispatch => ({
+    onChangeFilter: filterString => dispatch(changeFilter(filterString)),
+})
+
+export default connect(null, mapDispatchToProps)(HotelFilter);
