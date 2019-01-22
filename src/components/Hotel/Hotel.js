@@ -3,6 +3,19 @@ import PropTypes from 'prop-types';
 
 import './Hotel.css';
 
+function renderFacilities(facilities = [], key) {
+    if (facilities.length === 0) {
+        return <div className="Hotel-contact">Contact hotel for more details</div>
+    }
+    return (
+        <ul className="Hotel-facility-list">
+            {facilities.map((facility, index) => {
+                return <li key={key + index}>{facility}</li>
+            })}
+        </ul>
+    )
+}
+
 export const Hotel = ({ hotel = {} }) => {
     return (
         <div className="Hotel">
@@ -13,7 +26,7 @@ export const Hotel = ({ hotel = {} }) => {
             <div className="Hotel-right">
                 <div className="Hotel-facilities-title">Facilities:</div>
                 <div>
-                    facilities go here
+                {renderFacilities(hotel.facilities, hotel.name)}
                 </div>
             </div>
         </div>
