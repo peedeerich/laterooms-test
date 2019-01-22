@@ -49,4 +49,28 @@ describe('sortHotelsByRating', () => {
         ];
         expect(sortedList).toEqual(expected);
     });
+
+    it('returns a list of hotels sorted by star rating (ascending)', () => {
+        const hotelList = defaultList;
+        const sortedList = sortHotelsByRating(hotelList, true);
+        const expected = [
+          {
+            "name": "hmmm",
+            "starRating": 1,
+          },
+          {
+            "name": "ok",
+            "starRating": 3,
+          },
+          {
+            "name": "alright",
+            "starRating": 3,
+          },
+          {
+            "name": "nice",
+            "starRating": 5,
+          }
+        ];
+        expect(sortedList).toEqual(expected);
+    })
 })
